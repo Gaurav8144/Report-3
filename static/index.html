@@ -24,13 +24,96 @@
       font-size: 18px;
       color: #333;
     }
+
+    .top-ad, .bottom-ad {
+      margin: 20px 0;
+    }
+
+    .side-ads {
+      position: fixed;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .left-ads {
+      left: 10px;
+    }
+
+    .right-ads {
+      right: 10px;
+    }
+
+    iframe {
+      border: none;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
+  <!-- Top banner ad -->
+  <div class="top-ad">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '07575effb49952d355d3dff85d7e4a61',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/07575effb49952d355d3dff85d7e4a61/invoke.js"></script>
+  </div>
+
   <h2>Say Something</h2>
   <input type="text" id="userInput" placeholder="Type something..." />
   <button onclick="sendMessage()">Send</button>
   <div id="response"></div>
+
+  <!-- Bottom ad -->
+  <div class="bottom-ad">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'cd2bc28f54cfd54746668a4b2803afcd',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/cd2bc28f54cfd54746668a4b2803afcd/invoke.js"></script>
+  </div>
+
+  <!-- Left side ads -->
+  <div class="side-ads left-ads">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '65409094238a3ca53e9892c0e0869420',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/65409094238a3ca53e9892c0e0869420/invoke.js"></script>
+  </div>
+
+  <!-- Right side ads -->
+  <div class="side-ads right-ads">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'ad6579e602e6b4f7239400e0c3c15892',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/ad6579e602e6b4f7239400e0c3c15892/invoke.js"></script>
+
+    <script type='text/javascript' src='//pl27291575.profitableratecpm.com/5a/56/4b/5a564b3e102947ef49b8c663139d8a1e.js'></script>
+  </div>
 
   <script>
     async function sendMessage() {
