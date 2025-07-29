@@ -1,15 +1,21 @@
 from fastapi import FastAPI, Request
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
+import os
 
 app = FastAPI()
 
-# Serve static HTML file
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+# Serve index.html manually from static folder
+@app.get("/", response_class=HTMLResponse)
+async def serve_html():
+    file_path = os.path.join("static", "index.html")
+    with open(file_path, "r", encoding="utf-8") as f:
+        html_content = f.read()
+    return HTMLResponse(content=html_content, status_code=200)
 
-# API endpoint
+# API route for /reply
 @app.post("/reply")
-async def reply(request: Request):
-    data = await request.json()
-    user_message = data.get("message", "").lower()
-    return JSONResponse(content={"reply": "bye"})
+async def reply(data: dict):
+    message = data.get("message", "").lower()
+    if "bye" in message:
+        return JSONResponse(content={"reply": "Goodbye!"})
+    return JSONResponse(content={"reply": "Okay, bye!"})
